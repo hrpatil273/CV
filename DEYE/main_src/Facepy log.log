@@ -1,0 +1,924 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+PS C:\WINDOWS\system32> cd G:\DEV\MP-PYTHON
+PS G:\DEV\MP-PYTHON> pip install opencv-contrib-python --upgrade
+Collecting opencv-contrib-python
+  Downloading opencv_contrib_python-4.5.3.56-cp39-cp39-win_amd64.whl (41.8 MB)
+     |████████████████████████████████| 41.8 MB 1.1 MB/s
+Collecting numpy>=1.19.3
+  Downloading numpy-1.21.1-cp39-cp39-win_amd64.whl (14.0 MB)
+     |████████████████████████████████| 14.0 MB 99 kB/s
+Installing collected packages: numpy, opencv-contrib-python
+Successfully installed numpy-1.21.1 opencv-contrib-python-4.5.3.56
+WARNING: You are using pip version 20.2.3; however, version 21.1.3 is available.
+You should consider upgrading via the 'c:\python39\python.exe -m pip install --upgrade pip' command.
+PS G:\DEV\MP-PYTHON> python
+Python 3.9.2 (tags/v3.9.2:1a79785, Feb 19 2021, 13:44:55) [MSC v.1928 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> cv2.__version__
+'4.5.3'
+>>> exit()
+PS G:\DEV\MP-PYTHON> mkdir src
+
+
+    Directory: G:\DEV\MP-PYTHON
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        22/07/2021   1:20 PM                src
+
+
+PS G:\DEV\MP-PYTHON> cd src
+PS G:\DEV\MP-PYTHON\src> python .\cam_test.py
+[ WARN:1] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+PS G:\DEV\MP-PYTHON\src> ls
+
+
+    Directory: G:\DEV\MP-PYTHON\src
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+d-----        22/07/2021   2:19 PM                allRec
+d-----        22/07/2021   2:19 PM                cascades
+d-----        22/07/2021   2:19 PM                images
+d-----        22/07/2021   2:20 PM                pickles
+d-----        22/07/2021   2:20 PM                recognizers
+d-----        22/07/2021   2:20 PM                __pycache__
+-a----        21/06/2020  11:22 AM          80801 7.png
+-a----        21/12/2018   6:06 AM            332 base.py
+-a----        22/07/2021   1:20 PM            479 cam_test.py
+-a----        21/06/2020  11:22 AM           2388 faceRec.py
+-a----        15/10/2019  11:52 AM           1472 faces-train.py
+-a----        23/05/2020   6:12 PM           4038 faces.py
+
+
+PS G:\DEV\MP-PYTHON\src> python base.py
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+PS G:\DEV\MP-PYTHON\src> python .\faces-train.py
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\faces-train.py", line 4, in <module>
+    from PIL import Image
+ModuleNotFoundError: No module named 'PIL'
+PS G:\DEV\MP-PYTHON\src> pip install Pillow
+Collecting Pillow
+  Downloading Pillow-8.3.1-1-cp39-cp39-win_amd64.whl (3.2 MB)
+     |████████████████████████████████| 3.2 MB 363 kB/s
+Installing collected packages: Pillow
+Successfully installed Pillow-8.3.1
+WARNING: You are using pip version 20.2.3; however, version 21.1.3 is available.
+You should consider upgrading via the 'c:\python39\python.exe -m pip install --upgrade pip' command.
+PS G:\DEV\MP-PYTHON\src> python .\faces-train.py
+PS G:\DEV\MP-PYTHON\src> python faces.py
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\faces.py", line 10, in <module>
+    import pyrebase
+ModuleNotFoundError: No module named 'pyrebase'
+PS G:\DEV\MP-PYTHON\src> pip3 install pyrebase
+Collecting pyrebase
+  Using cached Pyrebase-3.0.27-py3-none-any.whl (9.6 kB)
+Collecting python-jwt==2.0.1
+  Using cached python_jwt-2.0.1-py2.py3-none-any.whl (8.8 kB)
+Collecting requests==2.11.1
+  Using cached requests-2.11.1-py2.py3-none-any.whl (514 kB)
+Collecting pycryptodome==3.4.3
+  Using cached pycryptodome-3.4.3.tar.gz (6.5 MB)
+Collecting requests-toolbelt==0.7.0
+  Using cached requests_toolbelt-0.7.0-py2.py3-none-any.whl (52 kB)
+Collecting oauth2client==3.0.0
+  Using cached oauth2client-3.0.0.tar.gz (77 kB)
+Collecting gcloud==0.17.0
+  Using cached gcloud-0.17.0.tar.gz (458 kB)
+Collecting jws>=0.1.3
+  Using cached jws-0.1.3.tar.gz (8.1 kB)
+Collecting httplib2>=0.9.1
+  Downloading httplib2-0.19.1-py3-none-any.whl (95 kB)
+     |████████████████████████████████| 95 kB 142 kB/s
+Collecting pyasn1>=0.1.7
+  Using cached pyasn1-0.4.8-py2.py3-none-any.whl (77 kB)
+Collecting pyasn1-modules>=0.0.5
+  Using cached pyasn1_modules-0.2.8-py2.py3-none-any.whl (155 kB)
+Collecting rsa>=3.1.4
+  Downloading rsa-4.7.2-py3-none-any.whl (34 kB)
+Requirement already satisfied: six>=1.6.1 in c:\python39\lib\site-packages (from oauth2client==3.0.0->pyrebase) (1.16.0)
+Collecting googleapis-common-protos
+  Downloading googleapis_common_protos-1.53.0-py2.py3-none-any.whl (198 kB)
+     |████████████████████████████████| 198 kB 107 kB/s
+Collecting protobuf!=3.0.0.b2.post1,>=3.0.0b2
+  Downloading protobuf-3.17.3-cp39-cp39-win_amd64.whl (909 kB)
+     |████████████████████████████████| 909 kB 261 kB/s
+Collecting pyparsing<3,>=2.4.2
+  Downloading pyparsing-2.4.7-py2.py3-none-any.whl (67 kB)
+     |████████████████████████████████| 67 kB 410 kB/s
+Using legacy 'setup.py install' for pycryptodome, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for oauth2client, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for gcloud, since package 'wheel' is not installed.
+Using legacy 'setup.py install' for jws, since package 'wheel' is not installed.
+Installing collected packages: jws, python-jwt, requests, pycryptodome, requests-toolbelt, pyparsing, httplib2, pyasn1, pyasn1-modules, rsa, oauth2client, protobuf, googleapis-common-protos, gcloud, pyrebase
+    Running setup.py install for jws ... done
+    Running setup.py install for pycryptodome ... done
+    Running setup.py install for oauth2client ... done
+    Running setup.py install for gcloud ... done
+Successfully installed gcloud-0.17.0 googleapis-common-protos-1.53.0 httplib2-0.19.1 jws-0.1.3 oauth2client-3.0.0 protobuf-3.17.3 pyasn1-0.4.8 pyasn1-modules-0.2.8 pycryptodome-3.4.3 pyparsing-2.4.7 pyrebase-3.0.27 python-jwt-2.0.1 requests-2.11.1 requests-toolbelt-0.7.0 rsa-4.7.2
+WARNING: You are using pip version 20.2.3; however, version 21.1.3 is available.
+You should consider upgrading via the 'c:\python39\python.exe -m pip install --upgrade pip' command.
+PS G:\DEV\MP-PYTHON\src> python faces.py
+707
+ALl logs saved in dir: G:\DEV\MP-PYTHON\src\allRec\880
+Capture video saved location : G:\DEV\MP-PYTHON\src\allRec\880\1.avi
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\faces.py", line 134, in <module>
+    data = {"name": mode(reclable),
+  File "C:\Python39\lib\statistics.py", line 561, in mode
+    raise StatisticsError('no mode for empty data') from None
+statistics.StatisticsError: no mode for empty data
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 7, in <module>
+    from playsound import playsound
+ModuleNotFoundError: No module named 'playsound'
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+81.5334394114397
+0
+harshwardhan
+82.41135992944203
+1
+harshwardhan
+83.14119795578732
+2
+harshwardhan
+85.91491456825479
+3
+harshwardhan
+85.30188678634866
+4
+harshwardhan
+85.28506313968502
+5
+harshwardhan
+85.09466159426808
+6
+harshwardhan
+84.25641396520274
+7
+harshwardhan
+84.51816874287601
+8
+harshwardhan
+89.93515840880728
+9
+harshwardhan
+85.78711914107588
+10
+harshwardhan
+88.42895803530479
+11
+harshwardhan
+87.1499526703826
+12
+harshwardhan
+88.34730398205176
+13
+harshwardhan
+86.42664678225519
+14
+harshwardhan
+89.99322379868157
+15
+harshwardhan
+85.4147315841533
+16
+harshwardhan
+85.62878971333612
+17
+harshwardhan
+85.20175534922895
+18
+harshwardhan
+88.08288674534484
+19
+harshwardhan
+85.46389590950626
+20
+harshwardhan
+84.928593634167
+21
+harshwardhan
+85.22110531000843
+22
+harshwardhan
+85.44641475055545
+23
+harshwardhan
+84.36567770781274
+24
+harshwardhan
+86.9955575305192
+25
+harshwardhan
+85.03422866043766
+26
+harshwardhan
+86.93453386887226
+27
+harshwardhan
+86.87671100675787
+28
+harshwardhan
+86.31137973024028
+29
+harshwardhan
+86.17266223683012
+30
+harshwardhan
+87.25657499133966
+31
+harshwardhan
+86.116863297274
+32
+harshwardhan
+88.39000450852082
+33
+harshwardhan
+88.80783455708594
+34
+harshwardhan
+87.38909168827469
+35
+harshwardhan
+88.54194601223632
+36
+harshwardhan
+88.341252835399
+37
+harshwardhan
+89.61019678695844
+38
+harshwardhan
+88.90314425481925
+39
+harshwardhan
+88.05827581463151
+40
+harshwardhan
+88.2869175415703
+41
+harshwardhan
+87.9282099211836
+42
+harshwardhan
+89.36549483455747
+43
+harshwardhan
+88.04548947095785
+44
+harshwardhan
+89.00597478180715
+45
+harshwardhan
+88.59359444925379
+46
+harshwardhan
+88.27284255182184
+47
+harshwardhan
+88.97664015057573
+48
+harshwardhan
+86.0872817296396
+49
+harshwardhan
+85.89717287509971
+50
+harshwardhan
+87.7504997926237
+51
+harshwardhan
+86.76898704257094
+52
+harshwardhan
+87.49080752700031
+53
+harshwardhan
+87.56299729905736
+54
+harshwardhan
+89.24717214913831
+55
+harshwardhan
+88.04828551197456
+56
+harshwardhan
+88.36055552299658
+57
+harshwardhan
+87.9587831207522
+58
+harshwardhan
+86.8947953590475
+59
+harshwardhan
+86.5848504333499
+60
+harshwardhan
+87.6966904903616
+61
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+81.6538095423772
+0
+harshwardhan
+89.32929738388107
+1
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+82.42735245242012
+0
+harshwardhan
+81.32247977879895
+1
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 139, in <module>
+    FaceRecStart()
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 79, in FaceRecStart
+    cap = cv2.VideoCapture(camera_port,cv2.CAP_DSHOW)
+NameError: name 'camera_port' is not defined
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+89.94044305885106
+0
+harshwardhan
+88.5965788369674
+1
+harshwardhan
+88.42078639024619
+2
+harshwardhan
+87.63420531617757
+3
+harshwardhan
+87.49718005338283
+4
+harshwardhan
+88.20429223271483
+5
+harshwardhan
+88.45956033674129
+6
+harshwardhan
+86.30337300263506
+7
+harshwardhan
+84.67914204312645
+8
+harshwardhan
+86.71518664594099
+9
+harshwardhan
+87.06875897827291
+10
+harshwardhan
+85.85141183032711
+11
+harshwardhan
+86.20479526265493
+12
+harshwardhan
+85.83966026020495
+13
+harshwardhan
+86.55112838146586
+14
+harshwardhan
+86.9891494544407
+15
+harshwardhan
+85.8678570416937
+16
+harshwardhan
+86.31352700350523
+17
+harshwardhan
+85.89749049430898
+18
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 140, in <module>
+    UploadToFbase()
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 20, in UploadToFbase
+    print("date", dt_string)
+UnboundLocalError: local variable 'dt_string' referenced before assignment
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+89.23252093586773
+0
+harshwardhan
+87.25175750348525
+1
+harshwardhan
+87.13250342424188
+2
+harshwardhan
+88.85880796634372
+3
+harshwardhan
+89.31153930786154
+4
+harshwardhan
+89.84530786906875
+5
+harshwardhan
+88.54663600931352
+6
+harshwardhan
+87.84720889976789
+7
+harshwardhan
+88.9007023958824
+8
+harshwardhan
+88.67676781250358
+9
+harshwardhan
+89.85226567768281
+10
+harshwardhan
+89.1694199515706
+11
+harshwardhan
+89.19090096693137
+12
+harshwardhan
+88.77631890269036
+13
+harshwardhan
+87.80911121624541
+14
+harshwardhan
+89.04308842222596
+15
+harshwardhan
+87.4882420457721
+16
+harshwardhan
+89.12822120355239
+17
+harshwardhan
+89.44284837706556
+18
+harshwardhan
+89.02422365522665
+19
+harshwardhan
+87.63922124473292
+20
+harshwardhan
+87.87765994526652
+21
+harshwardhan
+89.3741601878463
+22
+harshwardhan
+89.08107688184579
+23
+harshwardhan
+89.13242392509119
+24
+harshwardhan
+87.38556050372057
+25
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 17:49:36.560841
+Uploading data to firebase
+File not exist
+Traceback (most recent call last):
+  File "C:\Python39\lib\site-packages\pyrebase\pyrebase.py", line 444, in raise_detailed_error
+    request_object.raise_for_status()
+  File "C:\Python39\lib\site-packages\requests\models.py", line 862, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 403 Client Error: Forbidden for url: https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o?name=img/0.png
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 141, in <module>
+    UploadToFbase()
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 47, in UploadToFbase
+    storage.child(cl_path).put(l_path)
+  File "C:\Python39\lib\site-packages\pyrebase\pyrebase.py", line 406, in put
+    raise_detailed_error(request_object)
+  File "C:\Python39\lib\site-packages\pyrebase\pyrebase.py", line 448, in raise_detailed_error
+    raise HTTPError(e, request_object.text)
+requests.exceptions.HTTPError: [Errno 403 Client Error: Forbidden for url: https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o?name=img/0.png] {
+  "error": {
+    "code": 403,
+    "message": "Permission denied. Could not perform this operation"
+  }
+}
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+89.59737565380816
+0
+harshwardhan
+87.32302031281333
+1
+harshwardhan
+87.66316733061649
+2
+harshwardhan
+88.08042252721236
+3
+harshwardhan
+85.28307116445765
+4
+harshwardhan
+86.97615906717691
+5
+harshwardhan
+89.56176237983793
+6
+harshwardhan
+89.15865714206147
+7
+harshwardhan
+89.00804125577382
+8
+harshwardhan
+88.9085781283137
+9
+harshwardhan
+89.14478376521555
+10
+harshwardhan
+89.48612521448793
+11
+harshwardhan
+89.87503315759477
+12
+harshwardhan
+89.70566095737628
+13
+harshwardhan
+87.59003094806182
+14
+harshwardhan
+89.18728985616335
+15
+harshwardhan
+89.63217432445656
+16
+harshwardhan
+89.85830913501202
+17
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 17:55:01.477848
+Uploading data to firebase
+File not exist
+
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+17:55
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+88.07690423144432
+0
+harshwardhan
+88.44237542853836
+1
+harshwardhan
+89.91976992325807
+2
+harshwardhan
+89.6745316722346
+3
+harshwardhan
+89.38364500607359
+4
+harshwardhan
+88.73195911870924
+5
+harshwardhan
+88.59763118292165
+6
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 18:00:46.955186
+Uploading data to firebase
+File not exist
+
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+18:00
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+89.22423884858556
+0
+harshwardhan
+img/3943.png
+87.6799099635824
+1
+harshwardhan
+img/3943.png
+88.39778303138225
+2
+harshwardhan
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+89.88270450066771
+3
+harshwardhan
+img/3943.png
+img/3943.png
+88.36565118281844
+4
+harshwardhan
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+89.92289535659616
+5
+harshwardhan
+img/3943.png
+89.1758202944493
+6
+harshwardhan
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+img/3943.png
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 18:03:29.217557
+Uploading data to firebase
+File not exist
+
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+18:03
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+88.8354714603373
+0
+harshwardhan
+88.82228540190928
+1
+harshwardhan
+89.91850023759976
+2
+harshwardhan
+89.6538178133281
+3
+harshwardhan
+88.79914741760517
+4
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 18:06:01.244407
+Uploading data to firebase
+File not exist
+
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+18:06
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+86.74289268904684
+0
+harshwardhan
+86.75955280516585
+1
+harshwardhan
+89.74458703116684
+2
+vrushali
+87.91862502717923
+3
+harshwardhan
+89.51502410245097
+4
+vrushali
+86.64161865309772
+5
+harshwardhan
+87.92625712470584
+6
+harshwardhan
+89.07718402573833
+7
+harshwardhan
+89.4000780354074
+8
+harshwardhan
+89.74167871561316
+9
+harshwardhan
+89.76682689032772
+10
+harshwardhan
+89.46490410476191
+11
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+
+time 2021-07-22 18:07:05.797327
+Uploading data to firebase
+File not exist
+
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+18:07
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+87.7171234136689
+0
+harshwardhan
+88.6323946282817
+1
+harshwardhan
+87.40097078325387
+2
+harshwardhan
+88.89349196190241
+3
+harshwardhan
+89.91587176664962
+4
+harshwardhan
+88.42314261534086
+5
+harshwardhan
+87.14639058508668
+6
+harshwardhan
+89.52520110149267
+7
+harshwardhan
+88.22601657639825
+8
+harshwardhan
+88.61722300169777
+9
+harshwardhan
+89.2119881751141
+10
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+Traceback (most recent call last):
+  File "G:\DEV\MP-PYTHON\src\finalface.py", line 144, in <module>
+    UploadToFbase(FaceRecStart())
+TypeError: UploadToFbase() takes 0 positional arguments but 1 was given
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+89.52974243822078
+0
+harshwardhan
+89.84382476316313
+1
+harshwardhan
+88.63777142644287
+2
+harshwardhan
+89.713453258951
+3
+harshwardhan
+89.96561013715753
+4
+harshwardhan
+87.00975226011646
+5
+harshwardhan
+87.47865967418174
+6
+harshwardhan
+88.34097740220668
+7
+harshwardhan
+88.96903442947624
+8
+harshwardhan
+88.04287474965858
+9
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 18:09:43.184515
+Uploading data to firebase
+File not exist
+harshwardhan
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+18:09
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+88.49429108421305
+0
+harshwardhan
+83.35886446553788
+1
+harshwardhan
+82.06551493944916
+2
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 18:14:38.945297
+Uploading data to firebase
+File not exist
+harshwardhan
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F0.png?alt=media
+July 22, 2021
+18:14
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : Unknown
+Unable to Recognize your face, Admin is informed about your presence
+time 2021-07-22 18:16:52.905438
+Uploading data to firebase
+File not exist
+Unknown
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F20210722181652.png?alt=media
+July 22, 2021
+18:16
+PS G:\DEV\MP-PYTHON\src> python .\finalface.py
+81.65517816977624
+0
+harshwardhan
+83.05511034223625
+1
+harshwardhan
+83.0965530739502
+2
+harshwardhan
+82.73841072036141
+3
+harshwardhan
+89.28454597176805
+4
+harshwardhan
+89.75219905306056
+5
+harshwardhan
+89.26063527871752
+6
+harshwardhan
+[ WARN:0] global C:\Users\runneradmin\AppData\Local\Temp\pip-req-build-1i5nllza\opencv\modules\videoio\src\cap_msmf.cpp (438) `anonymous-namespace'::SourceReaderCB::~SourceReaderCB terminating async callback
+Recognised as : harshwardhan
+Face Authenticated, Welcome to the Home
+time 2021-07-22 18:18:53.887608
+Uploading data to firebase
+File not exist
+harshwardhan
+https://firebasestorage.googleapis.com/v0/b/mp-flutter-app.appspot.com/o/img%2F20210722181853.png?alt=media
+July 22, 2021
+18:18
+PS G:\DEV\MP-PYTHON\src>
