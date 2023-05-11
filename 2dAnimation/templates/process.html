@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <title>My Form</title>
+    <!-- load Bootstrap stylesheet -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="mb-3">Welcome to Game analyzer</h1>
+    <h3> Upload Game Video to begin game analysis</h3>
+      <form method="POST" action="/processing" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="file" class="form-label">Video File:</label>
+          <input type="file" class="form-control" id="file" name="file">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <!-- load Bootstrap JavaScript bundle (popper.js and bootstrap.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js" integrity="sha512-kY+0nCJccKaRLw31I2fJq+3qB86DkcdlnxCGFXaxRmSK1bI0k8dHc/NNQ24ZoIqZJtHhsL5GW1q3I2b5hfhpzg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  </body>
+</html>
